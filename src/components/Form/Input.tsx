@@ -5,13 +5,14 @@ import { ElementType } from "react";
 interface InputProps extends ChakraInputProps{
     name: string;
     label?: string;
-    icon?: ElementType
+    icon?: ElementType;
+    // error?: FieldError
 }
 
-export function Input ({name, label, icon, ...rest }: InputProps) {
+export function InputBase ({name, label, icon, ...rest }: InputProps) {
     return (
         <FormControl>
-            <FormLabel htmlFor={name}>{label}</FormLabel>
+            { !!label && <FormLabel htmlFor={name}>{label}</FormLabel> }
                 
             <InputGroup>
                 {

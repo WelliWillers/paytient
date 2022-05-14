@@ -16,7 +16,7 @@ export const theme = extendTheme({
         },
         primary: {
             normal: "#00D954",
-            hover: "#009954"
+            hover: "#00D964"
         },
         secondary: "#172EAB",
         white: "#fff",

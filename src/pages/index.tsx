@@ -1,41 +1,35 @@
-import { Box, Button, Flex, Heading, Icon, Image, Link, VStack, Text } from "@chakra-ui/react";
-import { Input } from "../components/Form/Input";
-import { RiFacebookCircleFill, RiLockUnlockLine, RiMailLine, RiTwitterFill } from 'react-icons/ri'
+import { Box, Button, Flex, Icon, Image, Text, VStack, Link} from "@chakra-ui/react";
+import { InputBase } from "../components/Form/Input";
+import { RiFacebookCircleFill, RiLockUnlockLine, RiMailLine, RiTwitterFill } from "react-icons/ri";
+import { MainBase } from "../components/Onboarding/Main";
+// import Link from "next/link";
+
 
 export default function Home() {
+
+  function handleSingIn(e) {
+    e.preventDefault();
+    
+  }
+
   return (
     <Flex align="center" h="100vh" w="100vw">
       
-      <Flex 
-        as="main" boxShadow='dark-lg' 
-        align="center" 
-        justify="space-between" 
-        h="100vh" 
-        p={["8", "20"]} 
-        maxWidth={["100%", "550"]} 
-        minWidth={["100%", "500"]}  
-        position={['fixed', 'relative']} 
-        flex="2" 
-        bg="white" 
-        direction="column"
-      >
-
-        {/* <Image src="" alt="" /> */}
-
-        <Text fontSize="40">LOGO</Text>
-        <Heading fontSize="25">Faça o seu login</Heading>
-
+      <MainBase title="Faça o seu login">
         <VStack spacing="8" w="100%">
-          <Input placeholder="Seu e-mail aqui" label="Insira seu e-mail" name="login" icon={RiMailLine} />
-          <Input placeholder="Sua senha aqui" label="Insira sua senha" type="password" name="password" icon={RiLockUnlockLine} />
+          <InputBase placeholder="Seu e-mail aqui" label="Insira seu e-mail" name="login" icon={RiMailLine} />
+          <InputBase placeholder="Sua senha aqui" label="Insira sua senha" type="password" name="password" icon={RiLockUnlockLine} />
         </VStack>
 
-        <Link color="primary.normal">Esqueci a senha</Link>
+        <Link href="#" color="primary.normal">Esqueci a senha</Link>
 
         <Button 
+          as="a"
+          href="/dashboard"
           bg='primary.normal' 
           w="100%" 
-          size='lg' 
+          size='lg'
+          onClick={handleSingIn}
           color="white"
           _hover={
             {
@@ -49,16 +43,16 @@ export default function Home() {
         <p>OU</p>
 
         <VStack spacing="4" w="100%">
-          <Button leftIcon={<Icon as={RiFacebookCircleFill}/>} colorScheme='secondary' bg="secondary" w="100%" size='lg'>
+          <Button as="a" leftIcon={<Icon as={RiFacebookCircleFill}/>} colorScheme='secondary' bg="secondary" w="100%" size='lg'>
             Entrar com Facebook
           </Button>
-          <Button leftIcon={<Icon as={RiTwitterFill}/>} colorScheme='secondary' bg="secondary" w="100%" size='lg'>
+          <Button as="a" leftIcon={<Icon as={RiTwitterFill}/>} colorScheme='secondary' bg="secondary" w="100%" size='lg'>
             Entrar com Twitter
           </Button>
         </VStack>
 
-        <Text>Ainda não possui sua conta? <Link color="primary.normal">Clique aqui</Link></Text>
-      </Flex>
+        <Text>Ainda não possui sua conta? <Link href="/sing-up" color="primary.normal">Clique aqui</Link></Text>
+      </MainBase>
 
       <Box as="aside" h="100vh" w="100%" flex={["1", "6"]} bg="gray.300">
         <Image src="https://passeiosturquia.com/wp-content/uploads/2020/06/turquia.jpg" boxSize='100%' objectFit='cover' />
