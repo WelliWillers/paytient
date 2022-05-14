@@ -30,7 +30,7 @@ export function Input ({name, label, icon, ...rest }: InputProps) {
                     name={name}
                     id={name} 
                     focusBorderColor='primary.normal'
-                    bgColor='gray.50'
+                    bgColor='white'
                     variant="outline"
                     fontSize="14"
                     _hover={
