@@ -13,7 +13,15 @@ export const theme = extendTheme({
             "200": "#b3b5c6",
             "100": "#d1d2dc",
             "50": "#eeeef2"
-        }
+        },
+        primary: {
+            normal: "#00D954",
+            hover: "#009954"
+        },
+        secondary: "#172EAB",
+        white: "#fff",
+        black: "#000",
+        red: "#D90000"
     },
 
     fonts: {
