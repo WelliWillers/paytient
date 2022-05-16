@@ -12,7 +12,7 @@ export function NavLink({icon, children, ...rest}:NavLinkProps){
     const {isOpen} = useSidebarDrawer()
 
     return (
-        <Link display="flex" alignItems="center" {...rest}>
+        <Link display="flex" alignItems="center" justifyContent={isOpen ? 'start' : 'center'} {...rest}>
             <Icon as={icon} fontSize="20"/>
             { 
                 isOpen && (

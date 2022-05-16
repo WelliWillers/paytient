@@ -2,14 +2,19 @@ import { Box, Button, Flex, Icon, Image, Text, VStack, Link} from "@chakra-ui/re
 import { InputBase } from "../components/Form/Input";
 import { RiFacebookCircleFill, RiLockUnlockLine, RiMailLine, RiTwitterFill } from "react-icons/ri";
 import { MainBase } from "../components/Onboarding/Main";
-// import Link from "next/link";
+import { useRouter } from "next/router";
+import toast from "react-hot-toast";
+import { FormEvent } from "react";
 
 
 export default function Home() {
 
-  function handleSingIn(e) {
+  const route = useRouter()
+
+  function handleSingIn(e: FormEvent) {
     e.preventDefault();
-    
+    toast.success('Entrou com sucesso!')
+    route.push('/dashboard')
   }
 
   return (
@@ -24,8 +29,6 @@ export default function Home() {
         <Link href="#" color="primary.normal">Esqueci a senha</Link>
 
         <Button 
-          as="a"
-          href="/dashboard"
           bg='primary.normal' 
           w="100%" 
           size='lg'

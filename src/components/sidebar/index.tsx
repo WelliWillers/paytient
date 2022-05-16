@@ -29,8 +29,7 @@ export function Sidebar(){
 
     return (
         <Flex>
-            <Box bg="white" borderRightColor="gray.200" border={2} p="8" w={isOpen ? "300px" : "auto"} maxWidth={350} h="100vh">
-                <Text fontSize="40">L</Text>
+            <Box bg="white" p="8" width={isOpen ? "300px" : "auto"} maxWidth={350} h="100vh" boxShadow="xl" >
                 <SidebarNav />
             </Box>
         </Flex>
