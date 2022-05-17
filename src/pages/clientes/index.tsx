@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, HStack, Icon, Input, Stack, Table, TableCaption, TableContainer, Tbody, Td, Text, Th, Thead, Tr, useToast } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, HStack, Icon, IconButton, Input, Stack, Table, TableContainer, Tbody, Td, Th, Thead, Tr, useToast } from "@chakra-ui/react";
 import { RiAddLine, RiArrowUpDownLine, RiCalendarEventLine, RiEyeLine, RiFilter2Line, RiSearch2Line } from "react-icons/ri";
 import { DashboardLayout } from "../../components/Layout";
 import { Pagination } from "../../components/Pagination";
@@ -18,13 +18,13 @@ export default function Clientes(){
     return (
         <DashboardLayout>
 
-            <Flex align="center" justify="space-between" pb="8" flexDirection={{sm: 'column', xl: 'row'}}>
+            <Flex align="center" justify="space-between" pb="8" flexDirection={{base: 'column', sm: 'column', xl: 'row'}}>
                 <Heading>
                     Clientes
                 </Heading>
 
                 <Flex align="center">
-                    <Stack direction={{sm: 'column', xl: 'row'}} spacing="8" align="center" flexDirection={{sm: 'column', xl: 'row'}}>
+                    <Stack direction={{base: 'column', sm: 'column', xl: 'row'}} spacing="8" align="center" flexDirection={{base: 'column', sm: 'column', xl: 'row'}}>
                         <Flex maxWidth="300px" align="center" >
                             <HStack spacing="4">
                                 <Icon as={RiSearch2Line} fontSize="18" />
@@ -79,7 +79,7 @@ export default function Clientes(){
                                 <Td>10/09/2017</Td>
                                 <Td>Med-III-BR</Td>
                                 <Td>
-                                    <Icon as={RiEyeLine}></Icon>
+                                    <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
                                 </Td>
                             </Tr>
                             <Tr height="70">
@@ -89,7 +89,7 @@ export default function Clientes(){
                                 <Td>10/09/2017</Td>
                                 <Td>Med-III-BR</Td>
                                 <Td>
-                                    <Icon as={RiEyeLine}></Icon>
+                                    <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
                                 </Td>
                             </Tr>
                             <Tr height="70">
@@ -99,7 +99,7 @@ export default function Clientes(){
                                 <Td>10/09/2017</Td>
                                 <Td>Med-III-BR</Td>
                                 <Td>
-                                    <Icon as={RiEyeLine}></Icon>
+                                    <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
                                 </Td>
                             </Tr>
                             <Tr height="70">
@@ -109,7 +109,7 @@ export default function Clientes(){
                                 <Td>10/09/2017</Td>
                                 <Td>Med-III-BR</Td>
                                 <Td>
-                                    <Icon as={RiEyeLine}></Icon>
+                                    <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
                                 </Td>
                             </Tr>
                             <Tr height="70">
@@ -119,7 +119,7 @@ export default function Clientes(){
                                 <Td>10/09/2017</Td>
                                 <Td>Med-III-BR</Td>
                                 <Td>
-                                    <Icon as={RiEyeLine}></Icon>
+                                    <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
                                 </Td>
                             </Tr>
                             <Tr height="70">
@@ -129,7 +129,7 @@ export default function Clientes(){
                                 <Td>10/09/2017</Td>
                                 <Td>Med-III-BR</Td>
                                 <Td>
-                                    <Icon as={RiEyeLine}></Icon>
+                                    <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
                                 </Td>
                             </Tr>
                             <Tr height="70">
@@ -139,7 +139,7 @@ export default function Clientes(){
                                 <Td>10/09/2017</Td>
                                 <Td>Med-III-BR</Td>
                                 <Td>
-                                    <Icon as={RiEyeLine}></Icon>
+                                    <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
                                 </Td>
                             </Tr>
                             <Tr height="70">
@@ -149,7 +149,7 @@ export default function Clientes(){
                                 <Td>10/09/2017</Td>
                                 <Td>Med-III-BR</Td>
                                 <Td>
-                                    <Icon as={RiEyeLine}></Icon>
+                                    <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
                                 </Td>
                             </Tr>
                         </Tbody>
