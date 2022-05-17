@@ -1,4 +1,5 @@
 import { Box, Button, Flex, Heading, HStack, Icon, IconButton, Input, Stack, Table, TableContainer, Tbody, Td, Th, Thead, Tr, useToast } from "@chakra-ui/react";
+import Link from "next/link";
 import { RiAddLine, RiArrowUpDownLine, RiCalendarEventLine, RiEyeLine, RiFilter2Line, RiSearch2Line } from "react-icons/ri";
 import { DashboardLayout } from "../../components/Layout";
 import { Pagination } from "../../components/Pagination";
@@ -79,7 +80,9 @@ export default function Clientes(){
                                 <Td>10/09/2017</Td>
                                 <Td>Med-III-BR</Td>
                                 <Td>
-                                    <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
+                                    <Link href="/clientes/1">
+                                        <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
+                                    </Link>
                                 </Td>
                             </Tr>
                             <Tr height="70">
@@ -89,7 +92,9 @@ export default function Clientes(){
                                 <Td>10/09/2017</Td>
                                 <Td>Med-III-BR</Td>
                                 <Td>
-                                    <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
+                                    <Link href="/clientes/2">
+                                        <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
+                                    </Link>
                                 </Td>
                             </Tr>
                             <Tr height="70">
@@ -99,7 +104,9 @@ export default function Clientes(){
                                 <Td>10/09/2017</Td>
                                 <Td>Med-III-BR</Td>
                                 <Td>
-                                    <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
+                                    <Link href="/clientes/3">
+                                        <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
+                                    </Link>
                                 </Td>
                             </Tr>
                             <Tr height="70">
@@ -109,7 +116,9 @@ export default function Clientes(){
                                 <Td>10/09/2017</Td>
                                 <Td>Med-III-BR</Td>
                                 <Td>
-                                    <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
+                                    <Link href="/clientes/4">
+                                        <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
+                                    </Link>
                                 </Td>
                             </Tr>
                             <Tr height="70">
@@ -119,7 +128,9 @@ export default function Clientes(){
                                 <Td>10/09/2017</Td>
                                 <Td>Med-III-BR</Td>
                                 <Td>
-                                    <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
+                                    <Link href="/clientes/5">
+                                        <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
+                                    </Link>
                                 </Td>
                             </Tr>
                             <Tr height="70">
@@ -129,7 +140,9 @@ export default function Clientes(){
                                 <Td>10/09/2017</Td>
                                 <Td>Med-III-BR</Td>
                                 <Td>
-                                    <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
+                                    <Link href="/clientes/6">
+                                        <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
+                                    </Link>
                                 </Td>
                             </Tr>
                             <Tr height="70">
@@ -139,7 +152,9 @@ export default function Clientes(){
                                 <Td>10/09/2017</Td>
                                 <Td>Med-III-BR</Td>
                                 <Td>
-                                    <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
+                                    <Link href="/clientes/7">
+                                        <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
+                                    </Link>
                                 </Td>
                             </Tr>
                             <Tr height="70">
@@ -149,7 +164,9 @@ export default function Clientes(){
                                 <Td>10/09/2017</Td>
                                 <Td>Med-III-BR</Td>
                                 <Td>
-                                    <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
+                                    <Link href="/clientes/8">
+                                        <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
+                                    </Link>
                                 </Td>
                             </Tr>
                         </Tbody>

@@ -28,7 +28,7 @@ const options: ApexOptions = {
         enabled: false
     },
     tooltip: {
-        enabled: false
+        enabled: true
     },
     xaxis: {
         type: 'datetime',
@@ -53,15 +53,19 @@ const options: ApexOptions = {
         type: 'gradient',
         gradient: {
             shade: 'dark',
-            opacityFrom: 0.7,
-            opacityTo: 0.3,
+            opacityFrom: 0.9,
+            opacityTo: 0,
         }
     }
 }
 
 const series = [
     {
-        name: "series1", data: [31, 120, 10, 52, 13, 90, 200]
+        name: "series1", 
+        data: [31, 120, 10, 52, 13, 90, 200]
+    },{
+        name: "series12", 
+        data: [41, 20, 110, 12, 3, 120, 20]
     }
 ]
 
@@ -110,7 +114,7 @@ export default function DashBoard() {
                         Inscritos da semana
                     </Text>
                 </HStack>
-                <Chart options={options} type="area" height="520" series={series} />
+                <Chart options={options} type="area" width="100%" height="500" series={series} />
             </Box>
 
         </DashboardLayout>
