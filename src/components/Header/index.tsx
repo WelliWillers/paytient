@@ -1,4 +1,5 @@
-import { Avatar, Box, Flex, HStack, Icon, IconButton, Menu, MenuButton, MenuItem, MenuList, VStack } from "@chakra-ui/react";
+import { Avatar, Box, Flex, HStack, Icon, IconButton, Menu, MenuButton, MenuDivider, MenuItem, MenuList, VStack } from "@chakra-ui/react";
+import Link from "next/link";
 import { RiChat3Line, RiCloseLine, RiMenuLine, RiNotification3Line } from "react-icons/ri";
 import { useSidebarDrawer } from "../../contexts/SidebarDrawerContext";
 
@@ -31,15 +32,20 @@ export function HeaderBase() {
                         <MenuButton>
                             <Avatar name='Dan Abrahmov'/>
                         </MenuButton>
-                        <MenuList>
-                            <VStack spacing="4">
-                                <MenuItem>Meus Dados</MenuItem>
-                                <MenuItem>Alterar senha</MenuItem>
-                                <MenuItem>Serviços</MenuItem>
-                                <MenuItem>Dúvidas frequentes</MenuItem>
-                                <MenuItem>Contato</MenuItem>
-                                <MenuItem>Sair</MenuItem>
-                            </VStack>
+                        <MenuList boxShadow="lg" border="none">
+                            <MenuItem>Meus Dados</MenuItem>
+                            <MenuDivider borderColor="gray.200" />
+                            <MenuItem>
+                                <Link href="/configuracoes/usuarios/1/atualiza-senha">Alterar senha</Link>
+                            </MenuItem>
+                            <MenuDivider borderColor="gray.200" />
+                            <MenuItem>Serviços</MenuItem>
+                            <MenuDivider borderColor="gray.200" />
+                            <MenuItem>Dúvidas frequentes</MenuItem>
+                            <MenuDivider borderColor="gray.200" />
+                            <MenuItem>Contato</MenuItem>
+                            <MenuDivider borderColor="gray.200" />
+                            <MenuItem>Sair</MenuItem>
                         </MenuList>
                     </Menu>
                     

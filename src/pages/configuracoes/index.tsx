@@ -34,7 +34,7 @@ export default function Configuracoes(){
                             justify="center"
                             flexDirection="column"
                         >
-                            <Icon fontSize="30" mb="6" color="primary.normal" as={RiShoppingCart2Line} /> 
+                            <Icon fontSize="50" mb="6" color="primary.normal" as={RiShoppingCart2Line} /> 
                             <Heading textAlign="center" fontSize="40">
                                 Permissões
                             </Heading>
@@ -62,7 +62,7 @@ export default function Configuracoes(){
                             justify="center"
                             flexDirection="column"
                         >
-                            <Icon fontSize="30" mb="6" color="primary.normal" as={RiUser3Line} /> 
+                            <Icon fontSize="50" mb="6" color="primary.normal" as={RiUser3Line} /> 
                             <Heading textAlign="center" fontSize="40">
                                 Usuários
                             </Heading>
