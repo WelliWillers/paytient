@@ -13,31 +13,31 @@ export function SidebarNav(){
                 <Text pb="10" fontSize="20">Logo</Text>
 
                 <NavSection>
-                    <NavLink icon={RiFolderChartLine}>
+                    <NavLink label="Dashboard" href="/dashboard" icon={RiFolderChartLine}>
                         Dashboard
                     </NavLink>
                     
-                    <NavLink icon={RiBallPenLine}>
+                    <NavLink label="Leads" href="/leads" icon={RiBallPenLine}>
                         Leads
                     </NavLink>
                     
-                    <NavLink icon={RiScan2Line}>
+                    <NavLink label="Campanhas" href="/campanhas" icon={RiScan2Line}>
                         Campanhas
                     </NavLink>
                     
-                    <NavLink icon={RiShoppingCart2Line}>
+                    <NavLink label="Vendas" href="/vendas" icon={RiShoppingCart2Line}>
                         Vendas
                     </NavLink>
                     
-                    <NavLink icon={RiUser3Line}>
+                    <NavLink label="Clientes" href="/clientes" icon={RiUser3Line}>
                         Clientes
                     </NavLink>
                     
-                    <NavLink icon={RiFileListLine}>
+                    <NavLink label="Cobrança" href="/cobranca" icon={RiFileListLine}>
                         Cobrança
                     </NavLink>
                     
-                    <NavLink icon={RiSettings2Line}>
+                    <NavLink label="Configuraçõe" href="/configuracoes" icon={RiSettings2Line}>
                         Configurações
                     </NavLink>
                 </NavSection>
@@ -45,7 +45,7 @@ export function SidebarNav(){
 
             <Box w="100%">
                 <NavSection>
-                    <NavLink onClick={() => route.push('/')} icon={RiLogoutCircleRLine}>
+                    <NavLink label="Sair" href="#" onClick={() => route.push('/')} icon={RiLogoutCircleRLine}>
                         Sair
                     </NavLink>
                 </NavSection>

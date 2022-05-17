@@ -29,7 +29,7 @@ export function Sidebar(){
 
     return (
         <Flex>
-            <Box bg="white" p="8" width={isOpen ? "300px" : "auto"} maxWidth={350} h="100vh" boxShadow="xl" >
+            <Box bg="white" p="8" width={isOpen ? "300px" : "auto"} maxWidth={350} h="100vh" maxHeight="100%" boxShadow="xl" >
                 <SidebarNav />
             </Box>
         </Flex>

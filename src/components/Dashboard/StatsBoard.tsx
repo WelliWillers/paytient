@@ -1,17 +1,17 @@
 import { Box, Flex, Heading, HStack, Icon, Text } from "@chakra-ui/react";
 import { ElementType, ReactNode } from "react";
-import { RiArrowUpSFill } from "react-icons/ri";
+import { RiArrowDownSFill, RiArrowUpSFill } from "react-icons/ri";
 
 interface StatsBoardProps {
     label: string;
     title: string;
-    subtitle: string;
+    percent: string;
     icon: ElementType;
     color?: string;
     children?: ReactNode
 }
 
-export function StatsBoard({label, color, title, subtitle, icon, children}:StatsBoardProps){
+export function StatsBoard({label, color, title, percent, icon, children}:StatsBoardProps){
     return (
         <Flex 
             p="8"
@@ -31,8 +31,10 @@ export function StatsBoard({label, color, title, subtitle, icon, children}:Stats
                 {title}
             </Heading>
             <Box display="flex" justifyContent="center" textAlign="center">
-                <Icon as={RiArrowUpSFill} color="green" fontSize={25} /> 
-                <Text> {subtitle}</Text>
+                {
+                    Number(percent) < 0 ? <Icon as={RiArrowDownSFill} color="red" fontSize={25} /> : <Icon as={RiArrowUpSFill} color="green" fontSize={25} />  
+                }                
+                <Text>{percent}%</Text>
             </Box>
 
             {children}

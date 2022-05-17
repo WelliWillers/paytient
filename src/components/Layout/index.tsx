@@ -13,10 +13,10 @@ export function DashboardLayout({children}:DashboardLayoutProps){
 
             <Sidebar />
 
-            <Box w="100%">
+            <Box w="100%" height="100%">
                 <HeaderBase />
 
-                <Box p="8" mb="15" height="100%" minWidth="100%" overflowY="scroll">
+                <Box p="8" mb="15" height="92vh" minWidth="100%" overflowY="scroll">
                     {children}
                 </Box>
         

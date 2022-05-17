@@ -14,7 +14,7 @@ export function MainBase({title, children}:MainProps){
             align="center" 
             justify="space-between" 
             h="100vh" 
-            p={["8", "20"]} 
+            p={["8", "10", "20"]} 
             maxWidth={["100%", "550"]} 
             minWidth={["100%", "500"]}  
             position={['fixed', 'relative']} 

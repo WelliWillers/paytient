@@ -1,19 +1,27 @@
-import { Box, Button, Flex, Icon, Image, Text, VStack, Link} from "@chakra-ui/react";
+import { Box, Button, Flex, Icon, Image, Text, VStack, Link, useToast} from "@chakra-ui/react";
 import { InputBase } from "../components/Form/Input";
 import { RiFacebookCircleFill, RiLockUnlockLine, RiMailLine, RiTwitterFill } from "react-icons/ri";
 import { MainBase } from "../components/Onboarding/Main";
 import { useRouter } from "next/router";
-import toast from "react-hot-toast";
+
 import { FormEvent } from "react";
 
 
 export default function Home() {
 
   const route = useRouter()
+  const toast = useToast()
 
   function handleSingIn(e: FormEvent) {
     e.preventDefault();
-    toast.success('Entrou com sucesso!')
+    toast({
+      title: `Login feito com sucesso`,
+      position: "top-right",
+      duration: 3000,
+      status: "success",
+      variant: 'solid',
+      isClosable: true,
+    })
     route.push('/dashboard')
   }
 

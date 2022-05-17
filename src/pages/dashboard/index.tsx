@@ -69,7 +69,7 @@ export default function DashBoard() {
     return (
         <DashboardLayout>
            
-            <Flex align="center" justify="space-between" pb="8" flexDirection={['column', 'row']}>
+            <Flex align="center" justify="space-between" pb="8" flexDirection={['column', 'column', 'row']}>
                 <Heading>
                     Indicadores
                 </Heading>
@@ -79,16 +79,22 @@ export default function DashBoard() {
                         <Text>
                             Período: Últimos 12 meses
                         </Text>
-                        <Button borderRadius={50} leftIcon={<Icon as={RiFilter2Line} color="primary.normal" />} variant="solid" bgColor="white" color="black" colorScheme='white'>Button</Button>
-                    </HStack>
+                    <Button
+                        borderRadius={50}
+                        leftIcon={<Icon fontSize="20" as={RiFilter2Line} color="primary.normal"/>}
+                        variant="solid"
+                        bgColor="white"
+                        color="gray.500"
+                        colorScheme='white'>Button</Button>                    
+                      </HStack>
                 </Flex>
             </Flex>
 
             <SimpleGrid columns={[1, 2, 3, 4]} gap="4" alignItems="flex-start" mb="8">
-                <StatsBoard color="blue" label="Vendas" title="245" subtitle="11,25" icon={RiShoppingCart2Line} />
-                <StatsBoard color="green" label="Faturamento" title="R$ 12.164,00" subtitle="11,25" icon={RiRefund2Line} />
-                <StatsBoard color="yellow" label="Conversão" title="12%" subtitle="11,25" icon={RiArrowLeftRightLine} />
-                <StatsBoard color="purple" label="Leads" title="432" subtitle="11,25" icon={RiUser3Line} />
+                <StatsBoard color="blue" label="Vendas" title="245" percent="11,25" icon={RiShoppingCart2Line} />
+                <StatsBoard color="green" label="Faturamento" title="R$ 12.164,00" percent="11,25" icon={RiRefund2Line} />
+                <StatsBoard color="yellow" label="Conversão" title="12%" percent="-11,25" icon={RiArrowLeftRightLine} />
+                <StatsBoard color="purple" label="Leads" title="432" percent="11,25" icon={RiUser3Line} />
             </SimpleGrid>
             
             <Box 
@@ -98,10 +104,13 @@ export default function DashBoard() {
                 pb="4"
                 boxShadow="xl"
             >
-                <Text fontSize="lg" mb="4">
-                    Inscritos da semana
-                </Text>
-                <Chart options={options} type="area" height="600" series={series} />
+                <HStack>
+                    <Icon color="primary.normal" as={RiRefund2Line} fontSize="20"/>
+                    <Text fontSize="lg" mb="4">
+                        Inscritos da semana
+                    </Text>
+                </HStack>
+                <Chart options={options} type="area" height="520" series={series} />
             </Box>
 
         </DashboardLayout>

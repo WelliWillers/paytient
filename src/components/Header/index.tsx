@@ -6,7 +6,7 @@ export function HeaderBase() {
     const { isOpen, onOpen, onClose } = useSidebarDrawer()
 
     return (
-        <Flex w="100%" bg="white" align="center" justify="space-between" px="8" py="4" boxShadow="xl">
+        <Flex w="100%" bg="white" align="center" height="8vh" justify="space-between" px="8" boxShadow="xl">
             <IconButton 
                 alignItems="center"
                 aria-label="Open navigation"
