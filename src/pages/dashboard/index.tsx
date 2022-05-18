@@ -22,13 +22,17 @@ const options: ApexOptions = {
         foreColor: theme.colors.gray[500]
     },
     grid: {
-        show: false
+        show: true
     },
     dataLabels: {
         enabled: false
     },
     tooltip: {
         enabled: true
+    },
+    legend: {
+        position: 'top',
+        horizontalAlign: 'right'
     },
     xaxis: {
         type: 'datetime',
@@ -95,10 +99,10 @@ export default function DashBoard() {
             </Flex>
 
             <SimpleGrid columns={[1, 2, 3, 4]} gap="4" alignItems="flex-start" mb="8">
-                <StatsBoard color="blue" label="Vendas" title="245" percent="11,25" icon={RiShoppingCart2Line} />
-                <StatsBoard color="green" label="Faturamento" title="R$ 12.164,00" percent="11,25" icon={RiRefund2Line} />
-                <StatsBoard color="yellow" label="Conversão" title="12%" percent="-11,25" icon={RiArrowLeftRightLine} />
-                <StatsBoard color="purple" label="Leads" title="432" percent="11,25" icon={RiUser3Line} />
+                <StatsBoard color="blue" label="Vendas" title="245" percent={-19} icon={RiShoppingCart2Line} />
+                <StatsBoard color="green" label="Faturamento" title="R$ 12.164,00" percent={100} icon={RiRefund2Line} />
+                <StatsBoard color="yellow" label="Conversão" title="12%" percent={-10} icon={RiArrowLeftRightLine} />
+                <StatsBoard color="purple" label="Leads" title="432" percent={15} icon={RiUser3Line} />
             </SimpleGrid>
             
             <Box 

@@ -21,7 +21,7 @@ export function InputBase ({name, label, icon, ...rest }: InputProps) {
                             h="100%"
                             pointerEvents='none'
                             fontSize='1.2em'
-                            children={<Icon size="lg" p="0" m="0" as={icon} />}
+                            children={<Icon size="lg" color="primary.normal" p="0" m="0" as={icon} />}
                         />
                     )
                 }

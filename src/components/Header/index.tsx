@@ -1,13 +1,13 @@
 import { Avatar, Box, Flex, HStack, Icon, IconButton, Menu, MenuButton, MenuDivider, MenuItem, MenuList, VStack } from "@chakra-ui/react";
 import Link from "next/link";
-import { RiChat3Line, RiCloseLine, RiMenuLine, RiNotification3Line } from "react-icons/ri";
+import { RiChat3Line, RiCloseLine, RiMenuLine, RiNotification3Line, RiQuestionLine } from "react-icons/ri";
 import { useSidebarDrawer } from "../../contexts/SidebarDrawerContext";
 
 export function HeaderBase() {
     const { isOpen, onOpen, onClose } = useSidebarDrawer()
 
     return (
-        <Flex w="100%" bg="white" align="center" height="8vh" justify="space-between" px="8" boxShadow="xl">
+        <Flex w="100%" bg="white" align="center" height="8vh" justify="space-between" px="8" boxShadow="md">
             <IconButton 
                 alignItems="center"
                 aria-label="Open navigation"
@@ -25,6 +25,7 @@ export function HeaderBase() {
 
             <Box display="flex" alignItems="center">
                 <HStack spacing="8">
+                    <Link href="/perguntas-frequentes"><Icon cursor="pointer" as={RiQuestionLine} fontSize="20" /></Link>
                     <Icon as={RiChat3Line} fontSize="20" />
                     <Icon as={RiNotification3Line} fontSize="20" />
 

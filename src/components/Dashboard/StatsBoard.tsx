@@ -5,7 +5,7 @@ import { RiArrowDownSFill, RiArrowUpSFill } from "react-icons/ri";
 interface StatsBoardProps {
     label: string;
     title: string;
-    percent: string;
+    percent: number;
     icon: ElementType;
     color?: string;
     children?: ReactNode
@@ -32,7 +32,7 @@ export function StatsBoard({label, color, title, percent, icon, children}:StatsB
             </Heading>
             <Box display="flex" justifyContent="center" textAlign="center">
                 {
-                    Number(percent) < 0 ? <Icon as={RiArrowDownSFill} color="red" fontSize={25} /> : <Icon as={RiArrowUpSFill} color="green" fontSize={25} />  
+                    percent < 0 ? <Icon as={RiArrowDownSFill} color="red" fontSize={25} /> : <Icon as={RiArrowUpSFill} color="green" fontSize={25} />  
                 }                
                 <Text>{percent}%</Text>
             </Box>

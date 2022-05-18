@@ -2,10 +2,12 @@ import { Box, Button, Flex, Heading, HStack, Icon, IconButton, Input, Stack, Tab
 import { RiAddLine, RiArrowUpDownLine, RiDeleteBin7Line, RiEyeLine, RiFilter2Line, RiPencilLine, RiSearch2Line } from "react-icons/ri";
 import { DashboardLayout } from "../../../components/Layout";
 import { Pagination } from "../../../components/Pagination";
+import { useModal } from "../../../contexts/ModalContext";
+
 
 export default function Usuarios(){
 
-    const toast = useToast()
+    const { toggleIsOpen, setModalParts, isConfirm, toggleConfirm } = useModal()
 
     function handleHoverSubmit(e){
         e.preventDefault();
@@ -14,6 +16,24 @@ export default function Usuarios(){
             alert('filtrar por name')
         }
     }
+
+    function handleDeleteUser(id: number){
+        if(id) {
+            setModalParts({
+                title: 'Tem certeza que deseja deletar este usuário?',
+                subtitle: 'Ao deletar o usuário não será possível voltar',
+                isDelete: true,
+                type: 'delete'
+            })
+            toggleIsOpen()
+        }
+    }
+
+    if(isConfirm) {
+        alert('Usuário deletado com sucesso.')
+        toggleConfirm()
+    }
+    
 
     return (
         <DashboardLayout>
@@ -67,6 +87,7 @@ export default function Usuarios(){
                             </Tr>
                         </Thead>
                         <Tbody>
+
                             <Tr height="70">
                                 <Td>Emilia Silberg</Td>
                                 <Td>HealPrev</Td>
@@ -78,123 +99,12 @@ export default function Usuarios(){
                                         <HStack spacing="1">
                                             <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
                                             <IconButton aria-label='Ver cliente' bgColor="blue.500" color="white" icon={<Icon as={RiPencilLine}/>} />
-                                            <IconButton aria-label='Ver cliente' bgColor="orange.400" color="white" icon={<Icon as={RiDeleteBin7Line}/>} />
+                                            <IconButton onClick={() => handleDeleteUser(12)} aria-label='Ver cliente' bgColor="orange.400" color="white" icon={<Icon as={RiDeleteBin7Line}/>} />
                                         </HStack>
                                     </Flex>
                                 </Td>
                             </Tr>
-                            <Tr height="70">
-                                <Td>Emilia Silberg</Td>
-                                <Td>HealPrev</Td>
-                                <Td>São Paulo</Td>
-                                <Td>10/09/2017</Td>
-                                <Td>Med-III-BR</Td>
-                                <Td width={8}>
-                                    <Flex align="center">
-                                        <HStack spacing="1">
-                                            <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
-                                            <IconButton aria-label='Ver cliente' bgColor="blue.500" color="white" icon={<Icon as={RiPencilLine}/>} />
-                                            <IconButton aria-label='Ver cliente' bgColor="orange.400" color="white" icon={<Icon as={RiDeleteBin7Line}/>} />
-                                        </HStack>
-                                    </Flex>
-                                </Td>
-                            </Tr>
-                            <Tr height="70">
-                                <Td>Emilia Silberg</Td>
-                                <Td>HealPrev</Td>
-                                <Td>São Paulo</Td>
-                                <Td>10/09/2017</Td>
-                                <Td>Med-III-BR</Td>
-                                <Td width={8}>
-                                    <Flex align="center">
-                                        <HStack spacing="1">
-                                            <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
-                                            <IconButton aria-label='Ver cliente' bgColor="blue.500" color="white" icon={<Icon as={RiPencilLine}/>} />
-                                            <IconButton aria-label='Ver cliente' bgColor="orange.400" color="white" icon={<Icon as={RiDeleteBin7Line}/>} />
-                                        </HStack>
-                                    </Flex>
-                                </Td>
-                            </Tr>
-                            <Tr height="70">
-                                <Td>Emilia Silberg</Td>
-                                <Td>HealPrev</Td>
-                                <Td>São Paulo</Td>
-                                <Td>10/09/2017</Td>
-                                <Td>Med-III-BR</Td>
-                                <Td width={8}>
-                                    <Flex align="center">
-                                        <HStack spacing="1">
-                                            <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
-                                            <IconButton aria-label='Ver cliente' bgColor="blue.500" color="white" icon={<Icon as={RiPencilLine}/>} />
-                                            <IconButton aria-label='Ver cliente' bgColor="orange.400" color="white" icon={<Icon as={RiDeleteBin7Line}/>} />
-                                        </HStack>
-                                    </Flex>
-                                </Td>
-                            </Tr>
-                            <Tr height="70">
-                                <Td>Emilia Silberg</Td>
-                                <Td>HealPrev</Td>
-                                <Td>São Paulo</Td>
-                                <Td>10/09/2017</Td>
-                                <Td>Med-III-BR</Td>
-                                <Td width={8}>
-                                    <Flex align="center">
-                                        <HStack spacing="1">
-                                            <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
-                                            <IconButton aria-label='Ver cliente' bgColor="blue.500" color="white" icon={<Icon as={RiPencilLine}/>} />
-                                            <IconButton aria-label='Ver cliente' bgColor="orange.400" color="white" icon={<Icon as={RiDeleteBin7Line}/>} />
-                                        </HStack>
-                                    </Flex>
-                                </Td>
-                            </Tr>
-                            <Tr height="70">
-                                <Td>Emilia Silberg</Td>
-                                <Td>HealPrev</Td>
-                                <Td>São Paulo</Td>
-                                <Td>10/09/2017</Td>
-                                <Td>Med-III-BR</Td>
-                                <Td width={8}>
-                                    <Flex align="center">
-                                        <HStack spacing="1">
-                                            <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
-                                            <IconButton aria-label='Ver cliente' bgColor="blue.500" color="white" icon={<Icon as={RiPencilLine}/>} />
-                                            <IconButton aria-label='Ver cliente' bgColor="orange.400" color="white" icon={<Icon as={RiDeleteBin7Line}/>} />
-                                        </HStack>
-                                    </Flex>
-                                </Td>
-                            </Tr>
-                            <Tr height="70">
-                                <Td>Emilia Silberg</Td>
-                                <Td>HealPrev</Td>
-                                <Td>São Paulo</Td>
-                                <Td>10/09/2017</Td>
-                                <Td>Med-III-BR</Td>
-                                <Td width={8}>
-                                    <Flex align="center">
-                                        <HStack spacing="1">
-                                            <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
-                                            <IconButton aria-label='Ver cliente' bgColor="blue.500" color="white" icon={<Icon as={RiPencilLine}/>} />
-                                            <IconButton aria-label='Ver cliente' bgColor="orange.400" color="white" icon={<Icon as={RiDeleteBin7Line}/>} />
-                                        </HStack>
-                                    </Flex>
-                                </Td>
-                            </Tr>
-                            <Tr height="70">
-                                <Td>Emilia Silberg</Td>
-                                <Td>HealPrev</Td>
-                                <Td>São Paulo</Td>
-                                <Td>10/09/2017</Td>
-                                <Td>Med-III-BR</Td>
-                                <Td width={8}>
-                                    <Flex align="center">
-                                        <HStack spacing="1">
-                                            <IconButton aria-label='Ver cliente' bgColor="primary.normal" color="white" icon={<Icon as={RiEyeLine}/>} />
-                                            <IconButton aria-label='Ver cliente' bgColor="blue.500" color="white" icon={<Icon as={RiPencilLine}/>} />
-                                            <IconButton aria-label='Ver cliente' bgColor="orange.400" color="white" icon={<Icon as={RiDeleteBin7Line}/>} />
-                                        </HStack>
-                                    </Flex>
-                                </Td>
-                            </Tr>
+
                         </Tbody>
                     </Table>
                 </TableContainer>
