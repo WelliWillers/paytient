@@ -1,16 +1,22 @@
-import { Box, Flex, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Image, Text, VStack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { RiBallPenLine, RiFileListLine, RiFolderChartLine, RiLogoutCircleRLine, RiScan2Line, RiSettings2Line, RiShoppingCart2Line, RiUser3Line } from "react-icons/ri";
+import { useSidebarDrawer } from "../../contexts/SidebarDrawerContext";
 import { NavLink } from "./NavLink";
 import { NavSection } from "./NavSection";
 
 export function SidebarNav(){
     const route = useRouter()
+    const {isOpen} = useSidebarDrawer()
 
     return (
         <VStack spacing="20" align="flex-start" justifyContent="space-between" h="100%">
             <Box>
-                <Text pb="10" fontSize="20">Logo</Text>
+                <Box textAlign="center">
+                    {
+                        isOpen ? <Image src="/logo.png" width="auto" /> :  <Image src="/favicon.png" width="14" />
+                    }
+                </Box>
 
                 <NavSection>
                     <NavLink label="Dashboard" href="/dashboard" icon={RiFolderChartLine}>

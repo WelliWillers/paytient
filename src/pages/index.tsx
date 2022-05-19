@@ -4,13 +4,15 @@ import { RiFacebookCircleFill, RiLockUnlockLine, RiMailLine, RiTwitterFill } fro
 import { MainBase } from "../components/Onboarding/Main";
 import { useRouter } from "next/router";
 
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 
 
 export default function Home() {
 
   const route = useRouter()
   const toast = useToast()
+
+  const [login, setLogin] = useState()
 
   function handleSingIn(e: FormEvent) {
     e.preventDefault();
@@ -30,8 +32,8 @@ export default function Home() {
       
       <MainBase title="Faça o seu login">
         <VStack spacing="8" w="100%">
-          <InputBase placeholder="Seu e-mail aqui" label="Insira seu e-mail" name="login" icon={RiMailLine} />
-          <InputBase placeholder="Sua senha aqui" label="Insira sua senha" type="password" name="password" icon={RiLockUnlockLine} />
+          <InputBase onChange={()=> {}} placeholder="Seu e-mail aqui" label="Insira seu e-mail" name="login" icon={RiMailLine} />
+          <InputBase onChange={()=> {}} placeholder="Sua senha aqui" label="Insira sua senha" type="password" name="password" icon={RiLockUnlockLine} />
         </VStack>
 
         <Link href="#" color="primary.normal">Esqueci a senha</Link>

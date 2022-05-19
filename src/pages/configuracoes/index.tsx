@@ -13,13 +13,13 @@ export default function Configuracoes(){
                 </Heading>
             </Flex>
 
-            <SimpleGrid columns={[1,2]} gap="8">
+            <SimpleGrid columns={{base: 1, lg: 2}} gap="8">
                 <Box 
                     p="8"
                     bg="white"
                     borderRadius={30}
                     boxShadow="xl"
-                    height="250px"
+                    height="350px"
                     animation={200}
                     cursor="pointer"
                     _hover={{
@@ -47,7 +47,7 @@ export default function Configuracoes(){
                     bg="white"
                     borderRadius={30}
                     boxShadow="xl"
-                    height="250px"
+                    height="350px"
                     animation={200}
                     cursor="pointer"
                     _hover={{

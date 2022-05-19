@@ -87,14 +87,17 @@ export default function DashBoard() {
                         <Text>
                             Período: Últimos 12 meses
                         </Text>
-                    <Button
-                        borderRadius={50}
-                        leftIcon={<Icon fontSize="20" as={RiFilter2Line} color="primary.normal"/>}
-                        variant="solid"
-                        bgColor="white"
-                        color="gray.500"
-                        colorScheme='white'>Button</Button>                    
-                      </HStack>
+                        <Button
+                            borderRadius={50}
+                            leftIcon={<Icon fontSize="20" as={RiFilter2Line} color="primary.normal"/>}
+                            variant="solid"
+                            bgColor="white"
+                            color="gray.500"
+                            colorScheme='white'
+                        >
+                            Button
+                        </Button>                    
+                    </HStack>
                 </Flex>
             </Flex>
 
@@ -111,6 +114,7 @@ export default function DashBoard() {
                 borderRadius={30}
                 pb="4"
                 boxShadow="xl"
+                w="100%"
             >
                 <HStack>
                     <Icon color="primary.normal" as={RiRefund2Line} fontSize="20"/>
@@ -118,7 +122,7 @@ export default function DashBoard() {
                         Inscritos da semana
                     </Text>
                 </HStack>
-                <Chart options={options} type="area" width="100%" height="500" series={series} />
+                <Chart options={options} type="area" height="500" series={series} />
             </Box>
 
         </DashboardLayout>
