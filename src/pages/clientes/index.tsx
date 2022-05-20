@@ -1,12 +1,14 @@
-import { Box, Button, Flex, Heading, HStack, Icon, IconButton, Input, Stack, Table, TableContainer, Tbody, Td, Th, Thead, Tr, useToast } from "@chakra-ui/react";
+import { Avatar, Box, Button, Flex, Heading, HStack, Icon, IconButton, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, SimpleGrid, Stack, Table, TableContainer, Tbody, Td, Text, Th, Thead, Tr, useDisclosure, useToast, VStack, WrapItem } from "@chakra-ui/react";
 import Link from "next/link";
-import { RiAddLine, RiArrowUpDownLine, RiCalendarEventLine, RiEyeLine, RiFilter2Line, RiSearch2Line } from "react-icons/ri";
+import { RiAddLine, RiArrowUpDownLine, RiCalendarEventLine, RiDoorLockBoxLine, RiEyeLine, RiFilter2Line, RiLockUnlockLine, RiMailLine, RiSearch2Line, RiSmartphoneLine, RiTeamLine } from "react-icons/ri";
+import { InputBase } from "../../components/Form/Input";
+import { SelectBase } from "../../components/Form/SelctBase";
 import { DashboardLayout } from "../../components/Layout";
 import { Pagination } from "../../components/Pagination";
 
 export default function Clientes(){
 
-    const toast = useToast()
+    const { isOpen, onOpen, onClose } = useDisclosure()
 
     function handleHoverSubmit(e){
         e.preventDefault();
@@ -52,6 +54,7 @@ export default function Clientes(){
                             borderRadius={50}
                             leftIcon={<Icon fontSize="20" as={RiAddLine} color="primary.normal" />}
                             variant="solid"
+                            onClick={onOpen}
                             bgColor="white"
                             color="gray.500"
                             colorScheme='white'>Novo</Button>
@@ -174,6 +177,40 @@ export default function Clientes(){
                 </TableContainer>
 
                 <Pagination/>
+
+                <Modal blockScrollOnMount={false}  size="xl" mt="10" isCentered isOpen={isOpen} onClose={onClose}>
+                    <ModalOverlay />
+
+                    <ModalContent w="100%" minWidth="50%" borderRadius={20}>
+                        <ModalHeader>Novo Usuário</ModalHeader>
+                        <ModalCloseButton />
+                        <ModalBody display="flex" alignItems="center" justifyContent="center" flexDirection="column" w="100%" >
+                            <WrapItem textAlign="center" m="auto">
+                                <Avatar size='2xl' name='Segun Adebayo' src='https://bit.ly/sage-adebayo' />{' '}
+                            </WrapItem>
+                            <Text fontWeight='bold' my='1rem'>
+                                Emilia Silberg
+                            </Text>
+                            
+                            <VStack spacing="2" w="100%" px="20">
+                                <InputBase placeholder="Nome completo" label="Nome" type="text" name="nome" icon={RiLockUnlockLine} />
+                                <InputBase placeholder="Título" label="Título" type="text" name="titulo" icon={RiTeamLine} />
+                                <InputBase placeholder="E-mail" label="E-mail" type="email" name="email" icon={RiMailLine} />
+                                <InputBase placeholder="Telefone" label="Telefone" type="text" name="telefone" icon={RiSmartphoneLine} />
+                                <InputBase placeholder="Senha" label="Senha" type="password" name="senha" icon={RiDoorLockBoxLine} />
+
+                                <SelectBase name="permissões" label="Permissões" />
+                            </VStack>
+                        </ModalBody>
+
+                        <ModalFooter>
+                            <Button variant='link' mr={3} onClick={onClose}>
+                                Fechar
+                            </Button>
+                            <Button bgColor="primary.normal" onClick={onClose}>Salvar</Button>
+                        </ModalFooter>
+                    </ModalContent>
+                </Modal>
             </Box>
 
         </DashboardLayout>
