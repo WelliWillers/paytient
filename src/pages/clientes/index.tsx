@@ -178,7 +178,7 @@ export default function Clientes(){
 
                 <Pagination/>
 
-                <Modal blockScrollOnMount={false}  size="xl" mt="10" isCentered isOpen={isOpen} onClose={onClose}>
+                <Modal blockScrollOnMount={false}  size="xl" mt="100" isCentered isOpen={isOpen} onClose={onClose}>
                     <ModalOverlay />
 
                     <ModalContent w="100%" minWidth="50%" borderRadius={20}>
