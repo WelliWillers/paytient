@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Heading, HStack, Icon, SimpleGrid, Text } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import { RiArrowLeftLine, RiLockUnlockLine, RiRefund2Line } from "react-icons/ri";
+import { RiArrowLeftLine, RiLockUnlockLine, RiRefund2Line, RiSave3Line } from "react-icons/ri";
 import { InputBase } from "../../components/Form/Input";
 import { SelectBase } from "../../components/Form/SelctBase";
 import { DashboardLayout } from "../../components/Layout";
@@ -88,6 +88,10 @@ export default function EditarClient(){
                         <InputBase placeholder="Sua senha aqui" label="Insira sua senha" type="password" name="password" icon={RiLockUnlockLine} />
                     </SimpleGrid>
                 </Box>
+
+                <Flex pt="10" align="center" justify="center">
+                    <Button bg="primary.normal" color="white" leftIcon={<Icon as={RiSave3Line} fontSize="18" />}>Salvar</Button>
+                </Flex>
             </Box>
         </DashboardLayout>
     )

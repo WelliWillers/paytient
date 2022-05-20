@@ -14,7 +14,7 @@ export function SidebarNav(){
             <Box>
                 <Box textAlign="center">
                     {
-                        isOpen ? <Image src="/logo.png" width="auto" /> :  <Image src="/favicon.png" width="14" />
+                        isOpen ? <Image src="/logo.png"height="auto" /> :  <Image src="/favicon.png"height="14" />
                     }
                 </Box>
 
