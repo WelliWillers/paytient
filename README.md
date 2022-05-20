@@ -41,7 +41,7 @@
 - [x] Tela de 
 - [x] Tela de alterar senha
 - [x] Tela de dúvidas frequentes
-- [ ] Tela de alterar usuario
+- [x] Tela de alterar usuario
 - [x] Responsividade
 - [x] Notificação Toast
 - [ ] Tratamento de erros
